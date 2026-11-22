@@ -742,6 +742,9 @@ function detectQA(t){
  if(/are you (a )?(bot|robot|ai|real|human|a person)|is this (a )?(bot|robot|ai|automated)|am i talking to (a )?(bot|robot|ai|human|person)/.test(low)){
    return {lines:['Fair question — I\u2019m Yusuf\u2019s automated assistant, so I can answer and book you in anytime.','Yusuf himself does the calls and the work. Want me to have him ring you?'],chips:['Yes, call me','Keep chatting']};
  }
+ if(/why (should|would|do) (i|we) (choose|pick|hire|use|go with|trust) (you|us|yusuf|him)|why (choose|pick|go with|hire|use) (you|us)|what makes you (different|better|special)|what.?s different about you|why (be seen|your company|this company)|convince me|why not (go with )?(someone|another|a bigger)/.test(low)){
+   return {lines:['Fair question — here\u2019s why, straight:','Real local businesses already trust Yusuf with their marketing — a multi-store retailer and a busy local restaurant, with real customers on the line every day.','Your first 30 days: Google profile, tracking and site fixes in week 1, ads live after that, and a one-page report on day 30 — calls, cost per lead, what\u2019s next.','Prices are all on this page, from $999/mo launch. And it\u2019s month-to-month — no lock-in, you own everything, walk away anytime.'],chips:['Book a free consult','See all prices','Which fits me?']};
+ }
  if(/price|cost|how much|expensive|cheap|budget|afford/.test(low)){
    if(/too expensive|can.t afford|too much|pricey/.test(low)){
      return {lines:['I hear you — money\u2019s got to work hard.','That\u2019s why it\u2019s month-to-month with no lock-in. Pause anytime.','For most folks, one extra job a month covers Be Seen. Want me to start you there?'],chips:['Tell me about Be Seen','Book a free consult','Leave my number']};
